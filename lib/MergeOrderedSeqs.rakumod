@@ -91,6 +91,6 @@ method pull-one {
     $value
 }
 
-sub merge-ordered-seqs(+@iterables, Order :$before) is export {
+sub merge-ordered-seqs(+@iterables, :$before) is export {
     Seq.new: MergeOrderedSeqs[|($_ with $before)].new: iterators => @iterables.map: *.iterator
 }
